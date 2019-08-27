@@ -10,7 +10,7 @@ public class RansomNote {
 	    HashMap <String,Integer> map = new HashMap<String,Integer>();
 	    HashMap <String, Integer> count = new HashMap<String,Integer>();
 	 
-	    
+	      
 	    for(String strMap : magazine) 
 	    {
 	    	if(map.containsKey(strMap)) 
