@@ -1,7 +1,9 @@
 package com.algorithm.practice;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Set;
 
 public class Solution {
 
@@ -20,44 +22,33 @@ public class Solution {
 		HashMap<String,Integer> map2 = new HashMap<String,Integer>();
 		HashMap<String,Integer> result = new HashMap<String,Integer>();
 		
-		int max = 0;
 		String keyname = "";
 		
 		String s1= "penpineapple";
 		String s2 ="applepen";
 		
-		arr1 = s1.toCharArray();
-		arr2 = s2.toCharArray();
-		String st1="";
-		String st2 ="";
-		
 		for(int i=0; i<s1.length();i++) {
-			for(int j=0; j<i;j++) {
-				 st1 = st1+arr1[j];
-				 st2 = st2+arr2[j];
+			String temp = "";
+			for(int j=i;j<s1.length();j++) {
+				map1.put(temp+s1.substring(i,j+1),(j+1-i));	
+				System.out.println(temp+s1.substring(i,j+1));
 			}
-			//map1.put(st1, !map1.get(st1).equals(null)?map1.get(st1)+1:0);
-			//map1.put(st2, !map1.get(st2).equals(null)?map2.get(st2)+1:0);
-			
-			map1.put(st1, 1);
-			map1.put(st2, 1);
-			
-			System.out.println(st1+","+map1.get(st1));
-			
-			st1="";
-			st2="";
 		}
-		
-		for( String key : map1.keySet() )
-		{ 
-			if(map1.get(key) == map2.get(key)) {
-				result.put(key, result.get(key)+1);
-				if(max<result.get(key)) {
-					keyname = key;
-					max=result.get(key);
+		for(int i=0; i<s2.length();i++) {
+			String temp = "";
+			
+			for(int j=i;j<s2.length();j++) {
+				String compareStr = temp+s2.substring(i,j+1);
+				System.out.println(compareStr);
+				if(map1.containsKey(compareStr)) {
+					System.out.println(compareStr+","+(map1.get(compareStr)));
+					map1.put(compareStr, map1.get(compareStr));
 				}
 			}
-		}
+		}	
+		
+		//value 로 정렬해서 제일큰 value 가진 단어 출력 
+
 		
 		return keyname;
 	}
