@@ -31,16 +31,15 @@ public class BackJoon2775 {
 		int[][] arr = new int[15][15];
 		
 		for(int i=0; i<15;i++) {
-			arr[i][0] =1;
+			arr[i][0] = 1;
 			arr[0][i] = 1+i;
 		}
 		
 		while(loop>0) {
-			//long beforeTime = System.currentTimeMillis();
+			
 			for(int i=1; i<15;i++) {
 				for(int j=1; j<15;j++) {
 					arr[i][j] = arr[i][j-1]+arr[i-1][j];
-					//System.out.print(arr[i][j]+",");
 				}
 			}
 			
@@ -48,8 +47,6 @@ public class BackJoon2775 {
 			int room = sc.nextInt();
 			
 			System.out.println(arr[floor][room-1]);
-			//long afterTime = System.currentTimeMillis();
-			//System.out.println((afterTime-beforeTime)/1000);
 			loop--;
 		}
 	}
