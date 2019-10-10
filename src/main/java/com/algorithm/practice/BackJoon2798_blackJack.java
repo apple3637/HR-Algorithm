@@ -2,26 +2,26 @@ package com.algorithm.practice;
 
 
 /*
- * ÇÑ±¹ ÃÖ°íÀÇ ºí·¢Àè °í¼ö ±èÁ¤ÀÎÀº »õ·Î¿î ºí·¢Àè ±ÔÄ¢À» ¸¸µé¾î »ó±Ù, Ã¢¿µÀÌ¿Í °ÔÀÓÇÏ·Á°í ÇÑ´Ù.
+ * í•œêµ­ ìµœê³ ì˜ ë¸”ëž™ìž­ ê³ ìˆ˜ ê¹€ì •ì¸ì€ ìƒˆë¡œìš´ ë¸”ëž™ìž­ ê·œì¹™ì„ ë§Œë“¤ì–´ ìƒê·¼, ì°½ì˜ì´ì™€ ê²Œìž„í•˜ë ¤ê³  í•œë‹¤.
 
-±èÁ¤ÀÎ ¹öÁ¯ÀÇ ºí·¢Àè¿¡¼­ °¢ Ä«µå¿¡´Â ¾çÀÇ Á¤¼ö°¡ ¾²¿© ÀÖ´Ù. ±× ´ÙÀ½, µô·¯´Â NÀåÀÇ Ä«µå¸¦ ¸ðµÎ ¼ýÀÚ°¡ º¸ÀÌµµ·Ï ¹Ù´Ú¿¡ ³õ´Â´Ù. ±×·± ÈÄ¿¡ µô·¯´Â ¼ýÀÚ MÀ» Å©°Ô ¿ÜÄ£´Ù.
+ê¹€ì •ì¸ ë²„ì ¼ì˜ ë¸”ëž™ìž­ì—ì„œ ê° ì¹´ë“œì—ëŠ” ì–‘ì˜ ì •ìˆ˜ê°€ ì“°ì—¬ ìžˆë‹¤. ê·¸ ë‹¤ìŒ, ë”œëŸ¬ëŠ” Nìž¥ì˜ ì¹´ë“œë¥¼ ëª¨ë‘ ìˆ«ìžê°€ ë³´ì´ë„ë¡ ë°”ë‹¥ì— ë†“ëŠ”ë‹¤. ê·¸ëŸ° í›„ì— ë”œëŸ¬ëŠ” ìˆ«ìž Mì„ í¬ê²Œ ì™¸ì¹œë‹¤.
 
-ÀÌÁ¦ ÇÃ·¹ÀÌ¾î´Â Á¦ÇÑµÈ ½Ã°£ ¾È¿¡ NÀåÀÇ Ä«µå Áß¿¡¼­ 3ÀåÀÇ Ä«µå¸¦ °ñ¶ó¾ß ÇÑ´Ù. ºí·¢Àè º¯Çü °ÔÀÓÀÌ±â ¶§¹®¿¡, ÇÃ·¹ÀÌ¾î°¡ °í¸¥ Ä«µåÀÇ ÇÕÀº MÀ» ³ÑÁö ¾ÊÀ¸¸é¼­ M°ú ÃÖ´ëÇÑ °¡±õ°Ô ¸¸µé¾î¾ß ÇÑ´Ù.
+ì´ì œ í”Œë ˆì´ì–´ëŠ” ì œí•œëœ ì‹œê°„ ì•ˆì— Nìž¥ì˜ ì¹´ë“œ ì¤‘ì—ì„œ 3ìž¥ì˜ ì¹´ë“œë¥¼ ê³¨ë¼ì•¼ í•œë‹¤. ë¸”ëž™ìž­ ë³€í˜• ê²Œìž„ì´ê¸° ë•Œë¬¸ì—, í”Œë ˆì´ì–´ê°€ ê³ ë¥¸ ì¹´ë“œì˜ í•©ì€ Mì„ ë„˜ì§€ ì•Šìœ¼ë©´ì„œ Mê³¼ ìµœëŒ€í•œ ê°€ê¹ê²Œ ë§Œë“¤ì–´ì•¼ í•œë‹¤.
 
-NÀåÀÇ Ä«µå¿¡ ½áÁ® ÀÖ´Â ¼ýÀÚ°¡ ÁÖ¾îÁ³À» ¶§, MÀ» ³ÑÁö ¾ÊÀ¸¸é¼­ M¿¡ ÃÖ´ëÇÑ °¡±î¿î Ä«µå 3ÀåÀÇ ÇÕÀ» ±¸ÇØ Ãâ·ÂÇÏ½Ã¿À.
+Nìž¥ì˜ ì¹´ë“œì— ì¨ì ¸ ìžˆëŠ” ìˆ«ìžê°€ ì£¼ì–´ì¡Œì„ ë•Œ, Mì„ ë„˜ì§€ ì•Šìœ¼ë©´ì„œ Mì— ìµœëŒ€í•œ ê°€ê¹Œìš´ ì¹´ë“œ 3ìž¥ì˜ í•©ì„ êµ¬í•´ ì¶œë ¥í•˜ì‹œì˜¤.
 
-ÀÔ·Â
-Ã¹Â° ÁÙ¿¡ Ä«µåÀÇ °³¼ö N(3 ¡Â N ¡Â 100)°ú M(10 ¡Â M ¡Â 300,000)ÀÌ ÁÖ¾îÁø´Ù. µÑÂ° ÁÙ¿¡´Â Ä«µå¿¡ ¾²¿© ÀÖ´Â ¼ö°¡ ÁÖ¾îÁö¸ç, ÀÌ °ªÀº 100,000À» ³ÑÁö ¾Ê´Â´Ù.
+ìž…ë ¥
+ì²«ì§¸ ì¤„ì— ì¹´ë“œì˜ ê°œìˆ˜ N(3 â‰¤ N â‰¤ 100)ê³¼ M(10 â‰¤ M â‰¤ 300,000)ì´ ì£¼ì–´ì§„ë‹¤. ë‘˜ì§¸ ì¤„ì—ëŠ” ì¹´ë“œì— ì“°ì—¬ ìžˆëŠ” ìˆ˜ê°€ ì£¼ì–´ì§€ë©°, ì´ ê°’ì€ 100,000ì„ ë„˜ì§€ ì•ŠëŠ”ë‹¤.
 
-ÇÕÀÌ MÀ» ³ÑÁö ¾Ê´Â Ä«µå 3ÀåÀ» Ã£À» ¼ö ÀÖ´Â °æ¿ì¸¸ ÀÔ·ÂÀ¸·Î ÁÖ¾îÁø´Ù.
+í•©ì´ Mì„ ë„˜ì§€ ì•ŠëŠ” ì¹´ë“œ 3ìž¥ì„ ì°¾ì„ ìˆ˜ ìžˆëŠ” ê²½ìš°ë§Œ ìž…ë ¥ìœ¼ë¡œ ì£¼ì–´ì§„ë‹¤.
 
-Ãâ·Â
-Ã¹Â° ÁÙ¿¡ MÀ» ³ÑÁö ¾ÊÀ¸¸é¼­ M¿¡ ÃÖ´ëÇÑ °¡±î¿î Ä«µå 3ÀåÀÇ ÇÕÀ» Ãâ·ÂÇÑ´Ù.
+ì¶œë ¥
+ì²«ì§¸ ì¤„ì— Mì„ ë„˜ì§€ ì•Šìœ¼ë©´ì„œ Mì— ìµœëŒ€í•œ ê°€ê¹Œìš´ ì¹´ë“œ 3ìž¥ì˜ í•©ì„ ì¶œë ¥í•œë‹¤.
 
-¿¹Á¦ ÀÔ·Â 1 
+ì˜ˆì œ ìž…ë ¥ 1 
 5 21
 5 6 7 8 9
-¿¹Á¦ Ãâ·Â 1 
+ì˜ˆì œ ì¶œë ¥ 1 
 21
  * */
 import java.io.IOException;
@@ -30,46 +30,40 @@ import java.util.Scanner;
 
 public class BackJoon2798_blackJack {
 
+	private static int[] cards;
+	private static int N;
+	private static int M;
+	
 	public static void main(String[] args) throws IOException {
-		
 		Scanner sc = new Scanner(System.in);
-		int n = sc.nextInt();
-		int m = sc.nextInt();
-		int[] arr = new int[n];
 		
-		int max = 0;
+		N = sc.nextInt();
+		M = sc.nextInt();
+		cards = new int[N];
 		
-		for(int i=0; i<n; i++) {
-			arr[i] = sc.nextInt();
+		for(int i=0; i<N;i++) {
+			cards[i]= sc.nextInt();
 		}
-		sort(arr);
 		
-		for(int i=0; i<n;i++) {
-			for(int j=i;j<n-2;j++) {
-				if(j<n && j+2 <= n) {
-					int sum = arr[i]+arr[j+1]+arr[j+2];
-					//System.out.println(sum);
-					if(max<sum && sum <=m) max = sum;
-					
-					sum =0;
-				}
-			}
-		}
-		System.out.println(max);
+		System.out.println(solution(0,0,0));
 	}
 	
-	public static void sort (int[] a) {
-		int[] temp = new int[a.length];
-		temp = a;
-		for(int i=0; i<temp.length;i++) {
-			for(int j=i; j<temp.length-1;j++) {
-				if(a[i]<a[j+1]) {
-					int tempInt = a[i];
-					a[i] = a[j+1];
-					a[j+1] = tempInt;
-				}
-			}
-		}	
+	private static int solution(int sum, int idx, int cnt) {
+		System.out.println("cnt:"+cnt);
+		if(cnt == 3) {
+			return sum >M?0:sum;
+		}
+		if(idx >= N) {
+			return 0;
+		}
+		int max =0;
+		for(int i=idx; i<N;i++) {
+			System.out.println("[sum:"+sum+",value:"+cards[i]+",i:"+i+",cnt:"+cnt+"]");
+			System.out.println("sulotion("+(sum+cards[i])+","+(i+1)+","+(cnt+1)+")");
+			max = Math.max(max, solution(sum+cards[i],i+1,cnt+1));
+			System.out.println("max:"+max);
+		}
+		return max;
 	}
 
 }
